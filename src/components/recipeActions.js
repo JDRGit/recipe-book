@@ -1,21 +1,21 @@
 import { createAction } from '@reduxjs/toolkit';
-import * as api from '../api';
+import { getRecipes, createRecipe } from '../api';
 
 export const fetchRecipes = createAction('FETCH_RECIPES');
 export const addRecipe = createAction('ADD_RECIPE');
 
-export const getRecipes = () => async dispatch => {
+export const fetchAllRecipes = () => async dispatch => {
   try {
-    const { data } = await api.fetchRecipes();
+    const { data } = await getRecipes();
     dispatch(fetchRecipes(data));
   } catch (error) {
     console.log(error.message);
   }
 };
 
-export const createRecipe = recipe => async dispatch => {
+export const createNewRecipe = recipe => async dispatch => {
   try {
-    const { data } = await api.createRecipe(recipe);
+    const { data } = await createRecipe(recipe);
     dispatch(addRecipe(data));
   } catch (error) {
     console.log(error.message);
