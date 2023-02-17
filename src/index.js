@@ -1,19 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { configureStore } from '@reduxjs/toolkit';
-import recipesReducer from './features/recipesSlice';
+import store from './redux/store';
+import './index.css';
 import App from './App';
-
-const store = configureStore({
-  reducer: {
-    recipes: recipesReducer,
-  },
-});
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <div className="bg-gray-100 min-h-screen">
+      <App />
+    </div>
   </Provider>,
   document.getElementById('root')
 );
