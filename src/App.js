@@ -1,30 +1,19 @@
 import React from 'react';
 import RecipeList from './components/RecipeList';
-import RecipeForm from './components/RecipeForm';
-import RecipeFilter from './components/RecipeFilter';
-import RecipeSearch from './components/RecipeSearch';
-import store from './store';
-import './index.css'
 
 function App() {
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <header className="py-6">
-        <h1 className="text-4xl font-bold text-gray-900">Jaime's Recipe Book</h1>
+    <div className="min-h-screen bg-gray-100">
+      <header className="bg-white shadow">
+        <div className="container mx-auto px-4 py-6 flex justify-between items-center">
+          <h1 className="text-2xl font-bold">Recipe Book</h1>
+        </div>
       </header>
-      <div className="flex flex-col md:flex-row gap-4">
-        <div className="md:w-1/4">
-          <RecipeFilter />
-        </div>
-        <div className="md:w-3/4">
-          <RecipeSearch />
-          <RecipeList />
-          <RecipeForm />
-        </div>
+      <div className="container mx-auto px-4 py-6">
+        <RecipeList />
       </div>
     </div>
   );
 }
 
 export default App;
-
