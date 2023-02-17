@@ -1,12 +1,12 @@
 import React from 'react';
-import './App.css';
+import Recipes from './features/Recipes';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
+    <div className="max-w-3xl mx-auto px-4">
       <Recipes />
     </div>
   );
-}
+};
 
 export default App;
