@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { createRecipe } from './recipeActions';
 
-const RecipeForm = ({ onSave }) => {
+
+const RecipeForm = () => {
+  const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [image, setImage] = useState('');
   const [description, setDescription] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSave({
-      name,
-      image,
-      description,
-    });
+    dispatch(createRecipe({ name, image, description }));
     setName('');
     setImage('');
     setDescription('');
