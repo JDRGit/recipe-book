@@ -3,7 +3,7 @@ import { searchRecipes } from '../api';
 
 export const fetchRecipes = createAction('FETCH_RECIPES');
 export const addRecipe = createAction('ADD_RECIPE');
-export const createRecipe = createAction('CREATE_RECIPE'); // add this line
+export const createRecipe = createAction('CREATE_RECIPE'); 
 
 export const getAllRecipes = () => async (dispatch) => {
   try {
@@ -26,7 +26,7 @@ export const addNewRecipe = (recipe) => async (dispatch) => {
 export const createNewRecipe = (recipe) => async (dispatch) => {
   try {
     const { data } = await createRecipe(recipe);
-    dispatch(createRecipe(data)); // modify this line
+    dispatch(createRecipe(data)); 
   } catch (error) {
     console.log(error.message);
   }

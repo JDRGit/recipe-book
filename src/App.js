@@ -3,6 +3,7 @@ import RecipeList from './components/RecipeList';
 import RecipeForm from './components/RecipeForm';
 import RecipeFilter from './components/RecipeFilter';
 import RecipeSearch from './components/RecipeSearch';
+import store from './store';
 import './index.css'
 
 function App() {
