@@ -1,5 +1,6 @@
 import React from 'react';
 import Recipes from './features/Recipes';
+import './index.css';
 
 const App = () => {
   return (
